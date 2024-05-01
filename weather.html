@@ -1,0 +1,177 @@
+<html>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <head> <!-- links scripts and sets title of page-->
+    <title>Weather Page</title>
+    <script src="dailyweatherdata.js"></script>
+    <script src="weatherforecast.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"
+      integrity="sha512-Wt1bJGtlnMtGP0dqNFH1xlkLBNpEodaiQ8ZN5JLA5wpc1sUlk/O5uuOMNgvzddzkpvZ9GLyYNa8w2s7rqiTk5Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  
+
+  <style>
+
+body {
+      animation: background-gradient-animation 12s linear infinite;
+    }
+
+    canvas {
+      background: white;
+      border: 5px solid black;
+      border-radius: 15px;
+      margin: 5%;
+      transition: transform 0.3s;
+    }
+
+    button:hover, canvas:hover {
+      transform: scale(1.11);
+    }
+
+    button {
+      color: white;
+      background-color: black;
+      border: 5px solid white;
+      border-radius: 12px;
+      margin: 10px;
+      transition: transform 0.3s;
+    }
+
+    .chart-type-buttons-container {
+      display: flex;
+      flex-direction: row; /*sets horizontally flowing buttons to change type of chart*/
+      justify-content: center;
+      padding: 1%;
+    }
+
+    @keyframes background-gradient-animation {
+      0%,
+      100% {
+        background-color: #f27168;
+      }
+      80% {
+        background-color: white;
+      }
+    }
+
+    .navigationbar {
+      background-color: black;
+      overflow: hidden;
+      border: 5px solid white;
+      border-radius: 12px;
+    }
+
+    .navigationbar a {
+      float: left;
+      color: white;
+      text-align: center;
+      padding: 1.5%;
+      text-decoration: none;
+      font-size: 20px;
+    }
+  </style>
+  </head>
+
+  <body>
+    <div class="navigationbar">
+      <a href="index.html" title="Click to go to Home">
+        <button>Home</button>
+      </a>
+      <a href="cv.html" title="Click to go to CV">
+        <button>CV</button>
+      </a>
+      <a href="weather.html" title="Click to go to Weather">
+        <button>Weather</button>
+      </a>
+      <a href="session.php" title="Click to go to Login">
+        <button>Login</button>
+      </a>
+    </div>
+
+    <div class="chart-type-buttons-container">
+      <button onclick="typeOfChart('line')">Line Chart</button> <!-- attaches onclick function to button, which changes the type of the chart-->
+
+      <button onclick="typeOfChart('bar')">Bar Chart</button> <!-- when button is clicked, the type of chart parameter is set to the type specified in the button name-->
+    </div>
+
+    <div class="chart-canvases">
+
+    <canvas id="StokeTempChart"></canvas>
+    <br />
+    <canvas id="StokeHumidityChart"></canvas>
+
+  </div>
+  
+  </body>
+
+  <script>
+    var forecast = JSON.parse(forecast_stoke); //parses the json string stored in the forecast_stoke variable
+
+    this.dateList = forecast.list.map((list) => {
+      return list.dt_txt;
+    });
+
+    this.temperatureList = forecast.list.map((list) => {
+      return list.main.temp;
+    });
+
+    this.humidityList = forecast.list.map((list) => {
+      return list.main.humidity;
+    });
+
+    const configuration1 = {
+      type: "line",
+      data: {
+        labels: this.dateList,
+        datasets: [
+          {
+            label: "Temperature in Stoke",
+            backgroundColor: "#f27168",
+            borderColor: "black",
+
+            fill: false,
+            data: this.temperatureList,
+          },
+        ],
+      },
+    }; //configuration of charts. sets the type of chart as well as the colours and datasets
+
+    const configuration2 = {
+      type: "line",
+      data: {
+        labels: this.dateList,
+        datasets: [
+          {
+            label: "Humidity in Stoke",
+            backgroundColor: "black",
+            borderColor: "#f27168",
+
+            fill: false,
+            data: this.humidityList,
+          },
+        ],
+      },
+    }; //configuration of charts. sets the type of chart as well as the colours and datasets
+
+    this.StokeTempChart = new Chart(
+      document.getElementById("StokeTempChart"),
+      configuration1
+    ); //creation of chart and sets configuration of chart
+
+    this.StokeHumidityChart = new Chart(
+      document.getElementById("StokeHumidityChart"),
+      configuration2
+    ); //creation of chart and sets configuration of chart
+
+    function typeOfChart(type) {
+      this.StokeTempChart.config.type = type;
+      this.StokeTempChart.update();
+
+      this.StokeHumidityChart.config.type = type;
+      this.StokeHumidityChart.update();
+    } //function which takes type of chart as its parameter, sets configuration type to type chosen by buttons and then updates the chart
+  </script>
+</html>

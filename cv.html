@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+  <title>Curriculum Vitae</title>
+  <style>
+  * {
+  font-family: sans-serif; 
+  box-sizing: border-box; /* this property instructs the browser to consider the elements padding and border when calculating the elements overall height and width.*/
+  /* it has been used to better fit elements to the viewport in tandem with the height and width properties*/
+  margin: 0%; 
+} /*  these properties apply to all elements. html-wide properties go here, such as the font for the pages text, as well as removal of intrinstic 8px margin on the <body> element*/
+
+body {
+  display: flex; 
+}
+
+.left-panel-container {
+  display: flex; /* Utilised display:flex as well as the flex:(number) properties to create the layout of the CV*/
+  flex-direction: column; /* flex-direction: column property used to create vertically flowing content*/
+  flex: 2;
+  justify-content: center; /* justify-content and align-items properties used to center content along the X and Y axis*/
+  align-items: center;
+  padding: 5%; /* padding used to separate divs to the desired measurement*/
+  animation: background-gradient-animation 12s linear infinite; /* Utilised keyframes to produce a gradient-style animated background which spans the duration of 12 seconds*/
+}
+
+.right-panels-container {
+  display: flex; 
+  flex: 8; 
+  flex-direction: column; 
+  padding: 1%; 
+  animation: background-gradient-animation 12s linear infinite; 
+}
+
+.middle-right-container > section {
+  display: flex; 
+  flex-direction: column; 
+  color: white; /* Black and white text for readability purposes*/
+  background-color: black; 
+  justify-content: center; 
+  align-items: center; 
+  border: 5px solid white; 
+  border-radius: 30px; 
+  height: 100%; 
+  padding: 5%; 
+  transition: transform 0.3s; /* utilised the scale property to increase size of elements when hovered over. this has been done for readability purposes, as well as UI/UX purposes*/
+}
+
+section:hover {
+  transform: scale(1.07); /* utilised the scale property to increase size of elements when hovered over. this has been done for readability purposes, as well as UI/UX purposes*/
+}
+
+.left-panel-content:hover,
+.bottom-right-panel:hover,
+.top-right-panel:hover {
+  transform: scale(1.06); 
+}
+
+
+
+h5,
+.bottom-right-content {
+  display: flex; 
+  flex-direction: column; 
+  color: white; 
+  background-color: black; 
+  justify-content: center; 
+  align-items: center; 
+  min-height: 12.5vh; 
+  border: 5px solid white; 
+  border-radius: 30px;  
+}
+
+h5 {
+  font-size: 200%; /* font size set to 200% of default size to fit container in an aesthetically pleasing way*/
+}
+
+.left-panel-content {
+  display: flex; 
+  flex-direction: column; 
+  height: 100%; 
+  padding: 5%; 
+  color: white; 
+  background-color: black; 
+  justify-content: space-between; /* space-between property used to evenly distribute div contents vertically*/
+  align-items: center; 
+  border: 5px solid white; 
+  border-radius: 30px; 
+  transition: transform 0.3s; 
+}
+
+.top-right-panel,
+.bottom-right-panel {
+  color: white;
+  padding: 5%;
+  transition: transform 0.3s; 
+}
+
+.middle-right-container {
+  padding: 5%; 
+}
+
+a,
+a:visited {
+  color: white; 
+  text-decoration: none; /*removes underline on links*/
+}
+
+a:hover {
+  color: #f27168;
+}
+
+button:hover {
+  transition: transform 0.3s; 
+      transform: scale(1.2);
+    }
+
+.sidenavigationbar a:hover{
+  color: white; 
+}
+
+
+hr {
+  height: 2px; 
+  width: 100%; 
+  background-color: white; 
+}
+
+
+
+.bottom-right-content {
+  padding: 5%; 
+}
+
+progress {
+  accent-color: #f27168; 
+}
+
+h4,
+h5 {
+  color: #f27168; 
+}
+
+@keyframes background-gradient-animation {
+  0%,
+  100% {
+    background-color: #f27168; 
+  }
+  80% {
+    background-color: white; 
+  }
+}
+
+.sidenavigationbar {
+  display: flex; 
+  flex-direction: column; 
+  flex: 2; 
+  justify-content: center;
+  align-items: center; 
+  padding-top: 5%; 
+  padding-bottom: 5%; 
+  padding-left: 1%; 
+  animation: background-gradient-animation 12s linear infinite; 
+ 
+}
+
+.sidenavigationbar-content {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  color: white; 
+  background-color: black; 
+  padding: 5%; 
+  height: 99%; 
+  border: 5px solid white; 
+  border-radius: 30px; 
+  list-style-type: none; /* removes underlines on links*/
+ 
+}
+
+button, select {
+  color: white; 
+  background-color: black; 
+  border: 5px solid white; 
+  border-radius: 12px; 
+  margin: 10px; 
+}
+
+    </style>
+</head>
+    
+
+<body>
+
+  <div class="sidenavigationbar">
+      
+    <ul class="sidenavigationbar-content">
+        <br>
+        <li> <button><a href="index.html" title="Click to go home">Home</a></button></li>
+        <br />
+        <li> <button><a href="cv.html" title="Click to go to CV">CV</a</button>
+        </li>
+        <br />
+        <li> <button><a href="weather.html" title="Click to go to Weather">Weather</a></button> </li>
+        <br />
+        <li> <button><a href="session.php" title="Click to go to Login">Login</a></button> </li> <!--Utilised the Unordered list element to produce vertically flowing text-->
+    </ul>
+
+  </div>
+    
+  <div class="left-panel-container">
+
+  <div class="left-panel-content">
+
+  <h4>Contact Details:</h4>
+  <p>
+    Name:
+  <br />
+    John Smith
+  <br />
+    Email:
+  <br />
+  jsmith@gmail.com
+  <br />
+  Mobile:
+  <br />
+ 01234 56789
+  <br />
+  Telephone:
+  <br />
+  01234 56789
+  <br />
+
+  Profession:
+  <br />
+  Web Developer
+  <br />
+
+  100 Keele Road
+  <br />
+  Keele
+  <br />
+  Stoke-on-Trent
+  </p>
+
+
+<p>
+    <hr>
+
+    <h4> Current Modules (as links):</h4>
+          
+    <ul>
+      <li> <a href="https://www.keele.ac.uk/catalogue/2023-24/csc-20021.htm " title="Click for more CSC-20021 module information via the Keele module catalogue">CSC-20021 - Web Technologies</a> </li>
+      <br />
+      <li><a href="https://www.keele.ac.uk/catalogue/2023-24/csc-20037.htm" title="Click for more CSC-20037 module information via the Keele module catalogue">CSC-20037 - Programming II - Data Structures and Algorithms</a></li>
+      <br />
+      <li><a href="https://www.keele.ac.uk/catalogue/2023-24/csc-20038.htm" title="Click for more CSC-20038 module information via the Keele module catalogue">CSC-20038 - Mobile Application Developments</a></li>
+      <br />
+      <li><a href="https://www.keele.ac.uk/catalogue/2023-24/csc-20043.htm" title="Click for more CSC-20043 module information via the Keele module catalogue">CSC-20043 - Computational and Artificial Intelligence I</a></li>
+      <br />
+    </ul> <!--links to keele website here-->
+
+    <hr>
+
+    <h4>Skill Competency Infographic:</h4>
+
+    <label for="HTMLbar">HTML, CSS, JS:</label>
+    <progress id="HTMLbar" value="100" max="100"> 100% </progress> <!--Progress bars used as infographic bars. this is purely a UI/UX decision intended to improve site aesthetics-->
+
+    <label for="HTMLbar">Java:</label>
+    <progress id="HTMLbar" value="90" max="100"> 90% </progress>
+
+    <label for="HTMLbar">C:</label>
+    <progress id="HTMLbar" value="70" max="100"> 70% </progress>
+    <br>
+  </p>
+
+  </div>
+  </div>
+    
+  <div class="right-panels-container">
+    <div class="top-right-panel">
+      <h5>
+        <b>Curriculum Vitae</b>
+      </h5>
+    </div>
+
+  <div class="middle-right-container">
+    <section>
+      <h4>Profile Summary:</h4> 
+        <p>
+I am a 2nd year Computer Science student studying at the university of Keele. I thoroughly enjoy the subject and am pursuing a career in web Development. I am conscientious, thorough and driven to achieve more.
+        </p>
+        <br>
+        <h4>Computer Skills:</h4>
+        <p>Proficient in multiple programming languages including:</p>
+        <ol>
+          <li>
+          Java
+          </li>
+          <li>
+          C
+          </li>
+          <li>
+          PHP
+          </li>
+        </ol>
+
+        <br>
+          <p> Firm understanding of Web Technologies, including HTML5, CSS3, Bootstrap, JavaScript, PHP, jQuery and AJAX</p>
+          <br>
+
+          <h4>Achievements:</h4>
+          <ul>
+            <li>Currently learning the C programming language in spare time.</li>
+            <li>Developed a thorough interest in web technologies, particularly HTML and CSS</li>
+            <li>Comprehensive understanding of modern computer hardware and how they are optimised for their functionality.</li>
+          </ul> 
+          <br>
+          <h4>3rd Year Project Interests:</h4>
+          <p>I am looking worward to working on the Third Year Double Project - ISP. I would like to focus my research onto the topic of Computer Hardware, more specifically improving performance of hardware components such as GPUs and CPUs. I hope to achieve this using mathematical models.</p>
+        </section>
+      </div>
+
+      <div class="bottom-right-panel"> 
+        <div class="bottom-right-content"> 
+          
+          <h4>Extra-curricular Interests:</h4>
+          
+<form>
+  <label for="Hobbies">For a drop-down list of my hobbies:</label> 
+  <br>
+
+  <select name="Hobbies">
+    <option value="Placeholder">Click here</option>
+    <option disabled title="Computer Science is really fun" value="Enjoy-CS">Enjoying Computer Science</option>
+    <option disabled title="My favourite books are about css" value="Reading">Reading about Web Tech</option>
+    <option disabled title="This is a website too" value="Creating Websites">Creating Websites</option>
+    <option disabled title="Animation is fun!" value="Animation">Web Animation</option>
+    <option disabled title="HTML is super fun!" value="Learning HTML CSS">Learning about HTML & CSS</option>
+  </select>
+</form>
+
+</div>
+  </div>
+    </div>
+  </body>
+</html>

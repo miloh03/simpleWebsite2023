@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+<head>
+  <title>Home</title>
+  <style>
+    html {
+   
+      height: 100%; 
+    
+    }
+    body {
+      display: flex; 
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      font-family: sans-serif;
+      animation: background-gradient-animation 12s linear infinite;
+    }
+
+    button:hover {
+      transform: scale(1.2);
+    }
+  
+    @keyframes background-gradient-animation {
+	0%,100%{
+		background-color: #f27168;
+	}
+	80%{
+		background-color: white;
+	}
+}
+
+
+    button {
+        
+      display: inline-block; /* inline block has been used to set the horizonally flowing navigation bars*/
+      /* this is because the inline block property doesnt add automatic line breaks (display: block does)*/
+      /* this allows for simple and easy population of the navigation bar with its contents in a horizonal manner*/
+      color: white;
+      background-color: black;
+      border: 5px solid white;
+      border-radius: 12px;
+      margin: 10px;
+      transition: transform 0.3s;
+    }
+
+    .home-page-buttons{
+        
+        background-color: black;
+        border: 5px solid white;
+      border-radius: 12px;
+    }
+
+    a:link, a:visited {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+  </style>
+  </head>
+
+  <body>
+
+<div class="home-page-buttons">
+  <a href="index.html" title="Click to go Home">
+    <button>Home</button>
+  </a>
+
+    <a href="cv.html" title="Click to go to CV">
+      <button>CV</button>
+    </a>
+    <a href="weather.html" title="Click to go to Weather">
+      <button>Weather</button>
+    </a>
+    <a href="session.php" title="Click to go to Login">
+      <button>Login</button>
+    </a>
+
+</div>
+
+  </body>
+</html>
